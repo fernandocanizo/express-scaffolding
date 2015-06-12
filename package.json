@@ -5,8 +5,7 @@
   "main": "app.js",
   "private": true,
   "scripts": {
-    "start": "forever ./bin/www",
-	"debug": "DEBUG=myapp:* ./bin/www",
+    "start": "DEBUG=myapp:* supervisor ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,5 +26,6 @@
   },
 
   "devDependencies": {
+    "supervisor": "*"
   }
 }
