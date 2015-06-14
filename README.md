@@ -20,16 +20,6 @@ to get starting dependencies.
 
 ## Run
 
-- To run it in development mode use
-```
-npm debug
-```
-- To run it in production mode use
 ```
 npm start
 ```
-- To run your tests issue
-```
-npm test
-```
-But there're no test provided nor test command. You have to provide them.
