@@ -48,5 +48,5 @@ function onError(error) {
 function onListening() {
 	// Event listener for HTTP server "listening" event.
 
-	debug('Listening on ' + server.address());
+	debug('Listening on http://localhost:' + server.address().port + '/');
 }
