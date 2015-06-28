@@ -24,7 +24,7 @@ if (app.get('env') === 'development') {
 	// output pretty HTML in development mode
 
 	app.locals.pretty = true;
-};
+}
 
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
