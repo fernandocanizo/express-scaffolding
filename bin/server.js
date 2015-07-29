@@ -11,7 +11,6 @@ var http = require('http');
 var port = process.env.PORT || '3000';
 app.set('port', port);
 
-var server = http.createServer(app);
 
 function onError(error) {
 	// Event listener for HTTP server "error" event.
@@ -41,11 +40,26 @@ function onError(error) {
 function onListening() {
 	// Event listener for HTTP server "listening" event.
 
-	debug('Listening on http://localhost:' + server.address().port + '/');
+	debug('Listening on http://localhost:' + port + '/');
 }
 
-// Listen on provided port, on all network interfaces.
-server.listen(port);
 
-server.on('error', onError);
-server.on('listening', onListening);
+function startServer() {
+	var server = http.createServer(app);
+
+	// Listen on provided port, on all network interfaces.
+	server.listen(port);
+
+	server.on('error', onError);
+	server.on('listening', onListening);
+}
+
+
+if(require.main === module) {
+    console.log("application run directly, starting app server.");
+    startServer();
+
+} else {
+    console.log("application imported as module via require, export function to create server.");
+    module.exports = startServer;
+}

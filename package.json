@@ -5,7 +5,9 @@
   "main": "app.js",
   "private": true,
   "scripts": {
-    "start": "DEBUG=myapp:* supervisor ./bin/server.js",
+    "start": "DEBUG=myapp:* pm2 start bin/server.js",
+    "clustered": "pm2 start clustered.app.js",
+    "stop": "pm2 kill",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
