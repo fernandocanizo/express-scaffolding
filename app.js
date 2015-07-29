@@ -18,7 +18,9 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+
+app.set('view engine', 'ejs');
+
 
 if (app.get('env') === 'development') {
 	// output pretty HTML in development mode
