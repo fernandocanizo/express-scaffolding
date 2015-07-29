@@ -13,13 +13,6 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
-// Listen on provided port, on all network interfaces.
-server.listen(port);
-
-server.on('error', onError);
-server.on('listening', onListening);
-
-
 function onError(error) {
 	// Event listener for HTTP server "error" event.
 
@@ -50,3 +43,9 @@ function onListening() {
 
 	debug('Listening on http://localhost:' + server.address().port + '/');
 }
+
+// Listen on provided port, on all network interfaces.
+server.listen(port);
+
+server.on('error', onError);
+server.on('listening', onListening);
